@@ -6,7 +6,7 @@
       <h2><%= link_to(event.name, event) %></h2>
     </header>
     <p>
-      <%= event.description %>
+      <%= truncate(event.description, length: 35, separator: ' ') %>
     </p>
     <table>
       <tr>
