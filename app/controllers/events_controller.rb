@@ -8,8 +8,8 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id])   
-  end 
+    @event = Event.find(params[:id])
+  end
 
   def update
     @event = Event.find(params[:id])
@@ -36,7 +36,7 @@ class EventsController < ApplicationController
   private
   def event_params
     event_params = params.require(:event).
-                  permit(:name, :description, :location, :price, :starts_at, :image_file_name, :capacity ) 
+                  permit(:name, :description, :location, :price, :starts_at, :image_file_name, :capacity)
   end
-end 
+end
 
