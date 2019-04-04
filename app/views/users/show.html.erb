@@ -16,6 +16,17 @@
   </ul>
   <% end %>
 
+  <% if @liked_events.any? %>
+  <h3>Liked Events</h3>
+  <ul>
+    <% @liked_events.each do |event| %>
+      <li>
+        <%= link_to event.name, event %>
+      </li>
+    <% end %>
+  </ul>
+  <% end %>
+
   <footer>
     <nav>
       <% if current_user?(@user) %>
