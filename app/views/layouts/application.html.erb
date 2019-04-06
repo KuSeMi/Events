@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Events</title>
+    <title><%= page_title %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,18 +12,16 @@
   <%= render 'layouts/header' %>
 
   <div id="wrapper">
-    <% if flash[:notice] %>
-      <p class="flash notice">
-        <%= flash[:notice] %>
-      </p>
-    <% end %>
-    
+
+    <%= render "layouts/flashes"  %>
+
     <div id="container">
       <%= render "layouts/sidebar" %>
       <section id="content">
         <%= yield %>
       </section>
     </div>
+
   </div>
 
   <%= render 'layouts/footer' %>
